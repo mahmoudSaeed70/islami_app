@@ -53,9 +53,15 @@ class _SuraDetailesState extends State<SuraDetailes> {
   }
 
   loadFile(int index) async {
-    String sura = await rootBundle.loadString("assets/files/${index + 1}.txt");
-    List<String> lines = sura.split("\n");
-    verses = lines;
-    setState(() {});
+    //(من الافضل انك تحط الكود ده جوه ترى وكاتش عشان لو ملقاش الفايل يطبعلك الايرور)
+    try {
+      String sura =
+          await rootBundle.loadString("assets/files/${index + 1}.txt");
+      List<String> lines = sura.split("\n");
+      verses = lines;
+      setState(() {});
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }
