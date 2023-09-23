@@ -18,7 +18,7 @@ class AhadethDetails extends StatelessWidget {
           title: Text(args.title, style: Theme.of(context).textTheme.bodyLarge),
         ),
         body: Card(
-          elevation: 14,
+          elevation: 13,
           margin: EdgeInsets.all(18),
           shape: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25),
