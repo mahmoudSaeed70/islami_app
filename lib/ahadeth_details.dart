@@ -1,25 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:islami_app/ahadeth_model.dart';
 import 'package:islami_app/my_theme.dart';
-import 'package:islami_app/sura_model.dart';
 
-class SuraDetailes extends StatefulWidget {
-  static const String routeName = "Sura Details";
-
-  @override
-  State<SuraDetailes> createState() => _SuraDetailesState();
-}
-
-class _SuraDetailesState extends State<SuraDetailes> {
-  List<String> verses = [];
+class AhadethDetails extends StatelessWidget {
+  static const String routeName = "Ahadeth Details";
 
   @override
   Widget build(BuildContext context) {
-    //(تستلم البيانات هنا يشوف المعلومات الى جاية من الصفحة التانية بعين الموديل الى انت عملته)
-    //(الاستلام بيبقى اول سطر جوة البيلد)
-    var args = ModalRoute.of(context)?.settings.arguments as SuraModel;
-    loadFile(args.index);
-
+    var args = ModalRoute.of(context)?.settings.arguments as AhadethModel;
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -27,7 +15,7 @@ class _SuraDetailesState extends State<SuraDetailes> {
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(args.name, style: Theme.of(context).textTheme.bodyLarge),
+          title: Text(args.title, style: Theme.of(context).textTheme.bodyLarge),
         ),
         body: Card(
           elevation: 14,
@@ -42,23 +30,16 @@ class _SuraDetailesState extends State<SuraDetailes> {
                 return Directionality(
                   textDirection: TextDirection.rtl,
                   child: Text(
-                    "${verses[index]} (${index + 1})",
+                    "${args.content[index]}",
                     textAlign: TextAlign.center,
                   ),
                 );
               },
-              itemCount: verses.length,
+              itemCount: args.content.length,
             ),
           ),
         ),
       ),
     );
-  }
-
-  loadFile(int index) async {
-    String sura = await rootBundle.loadString("assets/files/${index + 1}.txt");
-    List<String> lines = sura.split("\n");
-    verses = lines;
-    setState(() {});
   }
 }
