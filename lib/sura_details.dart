@@ -35,17 +35,20 @@ class _SuraDetailesState extends State<SuraDetailes> {
           shape: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25),
               borderSide: BorderSide(color: MyTheme.primary)),
-          child: ListView.builder(
-            itemBuilder: (context, index) {
-              return Directionality(
-                textDirection: TextDirection.rtl,
-                child: Text(
-                  "${verses[index]} (${index + 1})",
-                  textAlign: TextAlign.center,
-                ),
-              );
-            },
-            itemCount: verses.length,
+          child: Padding(
+            padding: EdgeInsets.all(18),
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Text(
+                    "${verses[index]} (${index + 1})",
+                    textAlign: TextAlign.center,
+                  ),
+                );
+              },
+              itemCount: verses.length,
+            ),
           ),
         ),
       ),
