@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/ahadeth_details.dart';
 import 'package:islami_app/ahadeth_model.dart';
 import 'package:islami_app/my_theme.dart';
@@ -26,7 +27,8 @@ class _AhadethTapState extends State<AhadethTap> {
           thickness: 2,
           color: MyTheme.primary,
         ),
-        Text("الأحاديث", style: Theme.of(context).textTheme.bodyMedium),
+        Text(AppLocalizations.of(context)!.ahadeth,
+            style: Theme.of(context).textTheme.bodyMedium),
         Divider(
           thickness: 2,
           color: MyTheme.primary,
