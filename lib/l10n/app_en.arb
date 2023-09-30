@@ -6,5 +6,11 @@
   "ahadethI": "Ahadeth",
   "sebha": "Sebha",
   "radio": "Radio",
-  "settings": "Settings"
+  "settings": "Settings",
+  "language": "Language",
+  "english": "English",
+  "arabic": "Arabic",
+  "mode": "Mode",
+  "light": "Light",
+  "dark": "Dark"
 }

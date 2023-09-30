@@ -6,5 +6,11 @@
   "ahadethI": "الأحاديث",
   "sebha": "السبحة",
   "radio": "الراديو",
-  "settings": "الإعدادات"
+  "settings": "الإعدادات",
+  "language": "اللفة",
+  "english": "إنجليزى",
+  "arabic": "عربى",
+  "mode": "الواجهة",
+  "light": "نهارى",
+  "dark": "مظلم"
 }

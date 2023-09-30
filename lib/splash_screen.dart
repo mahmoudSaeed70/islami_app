@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:islami_app/home.dart';
+import 'package:islami_app/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String routeName = "splash";
@@ -22,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Scaffold(
       // backgroundColor: Colors.transparent,
       // appBar: AppBar(
@@ -29,7 +32,9 @@ class _SplashScreenState extends State<SplashScreen> {
       //   elevation: 0,
       // ),
       body: Image.asset(
-        "assets/images/splash_screen.png",
+        provider.theme == ThemeMode.light
+            ? "assets/images/splash_screen.png"
+            : "assets/images/splash_screen_dark.png",
         width: double.infinity,
         fit: BoxFit.fill,
       ),
